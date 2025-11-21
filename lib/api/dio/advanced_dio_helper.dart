@@ -22,20 +22,39 @@ class AdvancedDioHelper {
     dio.interceptors.add(TokenInterceptor(authManager));
   }
 
-  Future<Response> get(String url,
-      {Map<String, dynamic>? queryParams}) async {
+  /// GET request
+  /// [url] is required
+  /// [queryParams] optional query parameters
+  /// [cacheKey] optional key for caching offline responses
+  Future<Response> get(
+    String url, {
+    Map<String, dynamic>? queryParams,
+    String? cacheKey, // Optional cache key
+  }) async {
     return await dio.get(url, queryParameters: queryParams);
   }
 
-  Future<Response> post(String url, {dynamic data}) async {
+  /// POST request
+  Future<Response> post(
+    String url, {
+    dynamic data,
+  }) async {
     return await dio.post(url, data: data);
   }
 
-  Future<Response> put(String url, {dynamic data}) async {
+  /// PUT request
+  Future<Response> put(
+    String url, {
+    dynamic data,
+  }) async {
     return await dio.put(url, data: data);
   }
 
-  Future<Response> delete(String url, {dynamic data}) async {
+  /// DELETE request
+  Future<Response> delete(
+    String url, {
+    dynamic data,
+  }) async {
     return await dio.delete(url, data: data);
   }
 }
