@@ -1,4 +1,3 @@
-library advanced_dio_helper;
 
 export 'api/dio/advanced_dio_helper.dart';
 export 'api/dio/logger.dart';
